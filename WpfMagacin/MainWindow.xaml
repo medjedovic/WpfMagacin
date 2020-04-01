@@ -1,0 +1,138 @@
+﻿<Window x:Class="WpfMagacin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMagacin"
+        mc:Ignorable="d"
+        Title="Magacin" Height="600" Width="1000" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <TabControl>
+        <TabItem Header="SIROVINE" FontSize="24">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Right" VerticalAlignment="Top">
+                        <GroupBox Header="UPRAVLJANJE" Margin="10" Padding="10">
+                            <StackPanel>
+                            <Button Content="DODAJ" Margin="5" Click="DodavanjeSirovine">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Green" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="btnIzmena" Content="IZMENI" Margin="5" Click="IzmenaSirovine">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Blue" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Content="OBRISI" Margin="5" Click="BrisanjeSirovine">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Red" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Content="IZLAZ" Margin="5" Click="Izlaz">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Red" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                        </GroupBox>
+                    <GroupBox Header="KOLIČINA" HorizontalAlignment="Center" Margin="10" Padding="10">
+                        <StackPanel>
+                            <Button Name="btnP" Content="+" Margin="5" Click="PlusKSirovine">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Green" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="btnM" Content="-" Margin="5" Click="MinusKSirovine">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Red" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+                <DataGrid Name="dgSirovine" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" SelectionChanged="dgSirovine_SelectionChanged" AlternatingRowBackground="LightBlue" AlternationCount="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Sifra Sirovine" Binding="{Binding sifra}" Width="*"/>
+                            <DataGridTextColumn Header="Naziv Sirovine" Binding="{Binding naziv}" Width="*"/>
+                            <DataGridTextColumn Header="Cijena Sirovine" Binding="{Binding cijena}" Width="*"/>
+                            <DataGridTextColumn Header="Kolicina" Binding="{Binding kolicina}" Width="*"/>
+                            <DataGridTextColumn Header="Ukupna Vrijednost" Binding="{Binding UCijenaK}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+        </TabItem>
+        <TabItem Header="MAGACIN PROIZVODA" FontSize="24">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Right" VerticalAlignment="Top" Margin="0 40 0 0 ">
+                        <GroupBox Header="UPRAVLJANJE">
+                            <StackPanel>
+                            <Button Content="DODAJ" Margin="5" Click="DodavanjeProizvoda">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Green" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Content="IZMENI" Margin="5" Click="IzmenaProizvoda">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="LightBlue" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Content="OBRISI" Margin="5" Click="BrisanjeProizvoda">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Red" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Content="IZLAZ" Margin="5" Click="Izlaz">
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Red" Offset="0.006"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Pretraži: "/>
+                        <TextBox Name="Pretrazi" Text="{Binding Pretraga, UpdateSourceTrigger=PropertyChanged}" Width="500"/>
+                    </StackPanel>
+                <DataGrid Name="dgProizvodi" SelectionMode="Single" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" SelectionChanged="dgSirovine_SelectionChanged"  AlternatingRowBackground="LightBlue" AlternationCount="2">
+                    <DataGrid.Columns>
+                            <DataGridTextColumn Header="Sifra Proizvoda" Binding="{Binding sifra}" Width="*"/>
+                            <DataGridTextColumn Header="Naziv Proizvoda" Binding="{Binding naziv}" Width="*"/>
+                            <DataGridTextColumn Header="Cijena Proizvoda" Binding="{Binding UCijenaP}" Width="*"/>
+                            <DataGridTextColumn Header="Količina" Binding="{Binding kolicina}" Width="*"/>
+                            <DataGridTextColumn Header="Ukupno" Binding="{Binding UKCijenaP}" Width="*"/>
+                    </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+        </TabItem>
+    </TabControl>
+</Window>

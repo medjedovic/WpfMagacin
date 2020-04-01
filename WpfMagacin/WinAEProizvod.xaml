@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfMagacin.WinAEProizvod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMagacin"
+        mc:Ignorable="d"
+        Title="DODAVANJE I IZMENA PODATAKA O PROIZVODU" Height="450" Width="800">
+    <Border Margin="5">
+        <UniformGrid Columns="2">
+            <Label Content="Šifra Proizvoda: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
+            <TextBox Text="{Binding sifra, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24"/>
+            <Label Content="Naziv Proizvoda: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
+            <TextBox Text="{Binding naziv, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24"/>
+            <Label Content="Količina Proizvoda: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
+            <TextBox Text="{Binding kolicina, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24" TextAlignment="Right"/>
+            <Label Content="Cijena sirovina: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
+            <TextBox Text="{Binding cijenaSirovina, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24" TextAlignment="Right"/>
+            <Label Content="Cijena rada: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
+            <TextBox Text="{Binding cijenaRada, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24" TextAlignment="Right"/>
+            <Label Content="Marža: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
+            <TextBox Text="{Binding marza, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24" TextAlignment="Right"/>
+            <Button Content="IZLAZ" FontSize="24" Margin="10 5 5 10" Click="Otkazi">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Red" Offset="0.006"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="UNESI" FontSize="24" Margin="10 5 5 10" Click="Unesi">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF46FF00" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </UniformGrid>
+    </Border>
+</Window>
