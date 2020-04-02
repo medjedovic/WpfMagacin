@@ -9,9 +9,9 @@
     <Border Margin="5">
         <UniformGrid Columns="2">
             <Label Content="Šifra Sirovine: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
-            <TextBox Text="{Binding sifra, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24"/>
+            <TextBox Name="txtSifra"   Text="{Binding sifra, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24"/>
             <Label Content="Naziv Sirovine: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
-            <TextBox Text="{Binding naziv, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24"/>
+            <TextBox Name="txtNaziv" Text="{Binding naziv, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24"/>
             <Label Content="Cijena Sirovine: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>
             <TextBox Text="{Binding cijena, UpdateSourceTrigger=Explicit}" VerticalAlignment="Center" Padding="2" FontSize="24" TextAlignment="Right"/>
             <Label Content="Količina Sirovine: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24"/>

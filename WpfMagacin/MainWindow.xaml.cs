@@ -20,7 +20,7 @@ namespace WpfMagacin
         {
             InitializeComponent();
             //proglašavanje datacontexta sam prozor i naći će pretragu property u datacontextu
-            DataContext = this;
+            //DataContext = this;
 
             ////Ukoliko file postoji otvori ako ne samo prikaži listu
             //if (File.Exists("ListaProizvoda.dat"))
@@ -117,7 +117,7 @@ namespace WpfMagacin
 
         private void DodavanjeSirovine(object sender, RoutedEventArgs e)
         {
-            WinAESirovina waes = new WinAESirovina();
+            WinAESirovina waes = new WinAESirovina(lstSirovina.ToList());
             waes.Owner = this;
             if (waes.ShowDialog() == true)
             {
@@ -129,7 +129,7 @@ namespace WpfMagacin
         {
             if (dgSirovine.SelectedItem != null)
             {
-                WinAESirovina waes = new WinAESirovina();
+                WinAESirovina waes = new WinAESirovina(lstSirovina.ToList());
                 waes.Owner = this;
                 waes.DataContext = dgSirovine.SelectedItem;
                 waes.ShowDialog();

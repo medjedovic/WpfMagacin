@@ -5,38 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMagacin"
         mc:Ignorable="d"
-        Title="Magacin" Height="600" Width="1000" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="Magacin" Height="600" Width="850" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <TabControl>
         <TabItem Header="SIROVINE" FontSize="24">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Right" VerticalAlignment="Top">
                         <GroupBox Header="UPRAVLJANJE" Margin="10" Padding="10">
                             <StackPanel>
-                            <Button Content="DODAJ" Margin="5" Click="DodavanjeSirovine">
-                                <Button.Background>
-                                    <RadialGradientBrush>
-                                        <GradientStop Color="Green" Offset="0.006"/>
-                                        <GradientStop Color="White" Offset="1"/>
-                                    </RadialGradientBrush>
-                                </Button.Background>
-                            </Button>
-                            <Button Name="btnIzmena" Content="IZMENI" Margin="5" Click="IzmenaSirovine">
-                                <Button.Background>
-                                    <RadialGradientBrush>
-                                        <GradientStop Color="Blue" Offset="0.006"/>
-                                        <GradientStop Color="White" Offset="1"/>
-                                    </RadialGradientBrush>
-                                </Button.Background>
-                            </Button>
-                            <Button Content="OBRISI" Margin="5" Click="BrisanjeSirovine">
-                                <Button.Background>
-                                    <RadialGradientBrush>
-                                        <GradientStop Color="Red" Offset="0.006"/>
-                                        <GradientStop Color="White" Offset="1"/>
-                                    </RadialGradientBrush>
-                                </Button.Background>
-                            </Button>
-                            <Button Content="IZLAZ" Margin="5" Click="Izlaz">
+                                <Button Content="DODAJ" Margin="5" Click="DodavanjeSirovine">
+                                    <Button.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="Green" Offset="0.006"/>
+                                            <GradientStop Color="White" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Button Name="btnIzmena" Content="IZMENI" Margin="5" Click="IzmenaSirovine">
+                                    <Button.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="Blue" Offset="0.006"/>
+                                            <GradientStop Color="White" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Button Content="OBRISI" Margin="5" Click="BrisanjeSirovine">
+                                    <Button.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="Red" Offset="0.006"/>
+                                            <GradientStop Color="White" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Button Content="IZLAZ" Margin="5" Click="Izlaz">
                                 <Button.Background>
                                     <RadialGradientBrush>
                                         <GradientStop Color="Red" Offset="0.006"/>
@@ -118,7 +118,6 @@
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
-
                     <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Content="Pretraži: "/>
                         <TextBox Name="Pretrazi" Text="{Binding Pretraga, UpdateSourceTrigger=PropertyChanged}" Width="500"/>

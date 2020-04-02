@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WpfMagacin
 {
@@ -19,7 +9,12 @@ namespace WpfMagacin
     /// </summary>
     public partial class WinAESirovina : Window
     {
-        public WinAESirovina()
+        public List<clsSirovina> sirovine;
+
+        public string sifra { get; set; }
+        public string naziv { get; set; }
+
+        public WinAESirovina(List<clsSirovina> s)
         {
             InitializeComponent();
             //instanca klase osoba u datacontext zbog bindinga
@@ -27,15 +22,47 @@ namespace WpfMagacin
 
             //sve bindinge odjednom commituje
             BindingGroup = new BindingGroup();
+            sirovine = s;
+
+            txtSifra.DataContext = this;
+            txtNaziv.DataContext = this;
+
         }
 
         private void Unesi(object sender, RoutedEventArgs e)
         {
             if (BindingGroup.CommitEdit())
             {
+                foreach (clsSirovina os in sirovine)
+                {
+                    if (os.sifra == sifra)
+                    {
+                        MessageBox.Show("Sirovina sa tom sifrom VEĆ postoji!");
+                        return;
+                    }
+                    if (os.naziv == naziv)
+                    {
+                        MessageBox.Show("Sirovina sa tim nazivom VEĆ postoji!");
+                        return;
+                    }
+                }
+                //MessageBox.Show("Sirovina sa tim imenom ili sifrom NE postoji!");
+                //na ovaj način kažemo da je unos urađen i da je sve ok
                 DialogResult = true;
                 Close();
             }
+            else
+            {
+                MessageBox.Show("Došlo je do greške prilikom unosa podataka u edit poljima!");
+            }
+
+
+            //if (BindingGroup.CommitEdit())
+            //{
+
+            //    DialogResult = true;
+            //    Close();
+            //}
         }
 
         private void Otkazi(object sender, RoutedEventArgs e)
